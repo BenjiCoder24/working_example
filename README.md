@@ -1,13 +1,11 @@
 
-# Python Functions and Exception Handling Tutorial
+# Python Advanced Functions and Enhanced Error Handling Tutorial
 
 ## how to open the codeing environement
 
 open:
 <a href="https://colab.research.google.com/drive/1RYQp-m3nOEZCMEF4VeKfzwaTHSQ3Lbme?usp=sharing" target="_blank">Click here to open Google Colab</a>
 
-
-# Python Advanced Functions and Enhanced Error Handling Tutorial
 
 ## Expanding Your Understanding of Functions
 
