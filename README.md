@@ -1,168 +1,142 @@
-
-# Python Advanced Functions and Enhanced Error Handling Tutorial
-
-## how to open the codeing environement
-
-open:
-<a href="https://colab.research.google.com/drive/1RYQp-m3nOEZCMEF4VeKfzwaTHSQ3Lbme?usp=sharing" target="_blank">Click here to open Google Colab</a>
-
-
-## Expanding Your Understanding of Functions
-
-In this section, we'll explore more advanced uses of functions in Python, including variable-length argument lists and unpacking argument lists.
-
-### Using Variable-length Argument Lists
-
-Sometimes, you don't know in advance how many arguments a function needs. Python allows you to handle this scenario through variable-length argument lists.
-
-```python
-def print_names(*names):
-    for name in names:
-        print(name)
-print_names('Alice', 'Bob', 'Charlie')
-
-```
-
-
-## Unpacking Argument Lists
-You can use the * operator to unpack the arguments out of a list or tuple.
-
-```python
-def add_three_numbers(a, b, c):
-    return a + b + c
-numbers = [1, 2, 3]
-print(add_three_numbers(*numbers))
-```
-
-
-
-
-
-
-
-## Introduction to Python Functions
-
-Functions are the building blocks of readable, maintainable, and reusable code. They allow you to execute a block of code multiple times without repeating yourself.
-
-```python
-def greet(name):
-    print(f"Hello, {name}!")
-greet('Alice')
-```
-
-## Understanding Function Return Values
-
-Functions can return values that can be used later in the code.
-
-```python
-def add(a, b):
-    return a + b
-result = add(3, 4)
-print(result)
-```
-
-## Scope and Lifetime of Variables
-
-Variables created inside a function are local to that function, unless declared global.
-
-```python
-def function_scope():
-    local_var = 5
-    print(local_var)  # prints 5
-
-local_var = 10
-function_scope()  # This will print 5
-print(local_var)  # This will print 10
-```
-
-## Advanced Function Concepts
-
-You can set default values for parameters and use keyword arguments to make your functions more flexible.
-
-```python
-def greet(name, greeting="Hello"):
-    print(f"{greeting}, {name}!")
-greet('Bob')
-greet('Bob', greeting='Good morning')
-```
-
-## Lambda Functions
-
-Lambda functions are small anonymous functions that can have any number of arguments but only one expression.
-
-```python
-square = lambda x: x ** 2
-print(square(5))
-```
-
-## Decorators and Higher-Order Functions
-
-Decorators are a way to modify the behavior of a function without permanently modifying it.
-
-```python
-def my_decorator(func):
-    def wrapper():
-        print("Something is happening before the function is called.")
-        func()
-        print("Something is happening after the function is called.")
-    return wrapper
-
-@my_decorator
-def say_hello():
-    print("Hello!")
-
-say_hello()
-```
-
-## Introduction to Exception Handling
-
-Exception handling in Python is done through the use of try and except blocks.
-
-```python
-try:
-    # code that may cause an exception
-    number = int(input("Enter a number: "))
-except ValueError:
-    print("That's not a valid number!")
-```
-
-## Working with the Exception Hierarchy
-
-Python has many built-in exceptions that you can use to handle different error cases.
-
-```python
-try:
-    # code that may cause an exception
-    number = int(input("Enter a number: "))
-except ValueError as e:
-    print(f"An error occurred: {e}")
-```
-
-## Ensuring Resource Management with `with` Statements
-
-The with statement allows you to ensure that resources are properly managed.
-
-```python
-with open('file.txt', 'w') as file:
-    file.write('Hello, world!')
-```
-
-## Practical Example: Creating a Robust Function
-
-Let's build a function that takes user input and handles errors appropriately.
-
-```python
-def get_number():
-    while True:
-        try:
-            return int(input("Enter a number: "))
-        except ValueError:
-            print("That's not a valid number! Please try again.")
-
-number = get_number()
-print(f"You entered: {number}")
-```
-
-## Conclusion
-
-In this tutorial, we've covered how to define and use functions, handle exceptions, and manage resources in Python. These concepts are essential for writing clean, efficient, and robust Python code.
+{
+ "cells": [
+  {
+   "cell_type": "markdown",
+   "id": "1e7691f9",
+   "metadata": {},
+   "source": [
+    "# Python Tutorial for Beginners"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "d9eb3e22",
+   "metadata": {},
+   "source": [
+    "## Introduction\n",
+    "This tutorial will guide you through the basics of Python, focusing on functions, variables, and for loops."
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "d221dcf6",
+   "metadata": {},
+   "source": [
+    "## Variables\n",
+    "Variables are used to store information that can be referenced and manipulated in a program.\n",
+    "```python\n",
+    "# Creating a variable\n",
+    "greeting = 'Hello, world!'\n",
+    "print(greeting)\n",
+    "```"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "02121c0a",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# Creating a variable\n",
+    "greeting = 'Hello, world!'\n",
+    "print(greeting)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "3a0c5293",
+   "metadata": {},
+   "source": [
+    "## Functions\n",
+    "Functions are reusable pieces of code that perform a specific task.\n",
+    "```python\n",
+    "# Defining a function\n",
+    "def greet(name):\n",
+    "    print(f'Hello, {name}!')\n",
+    "\n",
+    "greet('Alice')\n",
+    "```"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "72e8aa8c",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# Defining a function\n",
+    "def greet(name):\n",
+    "    print(f'Hello, {name}!')\n",
+    "\n",
+    "greet('Alice')"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "0a5b62cd",
+   "metadata": {},
+   "source": [
+    "## For Loops\n",
+    "For loops are used for iterating over a sequence (such as a list, tuple, dictionary, or string).\n",
+    "```python\n",
+    "# Using a for loop\n",
+    "colors = ['red', 'green', 'blue']\n",
+    "for color in colors:\n",
+    "    print(color)\n",
+    "```"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "cebb16d8",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# Using a for loop\n",
+    "colors = ['red', 'green', 'blue']\n",
+    "for color in colors:\n",
+    "    print(color)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "ffa6b0cd",
+   "metadata": {},
+   "source": [
+    "## Fully Working Example\n",
+    "Now, let's combine what we've learned into a fully working example.\n",
+    "```python\n",
+    "# A simple program that greets each person in a list by their favorite color\n",
+    "def greet_by_favorite_color(name, color):\n",
+    "    print(f'Hello, {name}! Your favorite color is {color}.')\n",
+    "\n",
+    "names_and_colors = [('Alice', 'blue'), ('Bob', 'green'), ('Charlie', 'red')]\n",
+    "for name, color in names_and_colors:\n",
+    "    greet_by_favorite_color(name, color)\n",
+    "```"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "c5151ec4",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# A simple program that greets each person in a list by their favorite color\n",
+    "def greet_by_favorite_color(name, color):\n",
+    "    print(f'Hello, {name}! Your favorite color is {color}.')\n",
+    "\n",
+    "names_and_colors = [('Alice', 'blue'), ('Bob', 'green'), ('Charlie', 'red')]\n",
+    "for name, color in names_and_colors:\n",
+    "    greet_by_favorite_color(name, color)"
+   ]
+  }
+ ],
+ "metadata": {},
+ "nbformat": 4,
+ "nbformat_minor": 5
+}
